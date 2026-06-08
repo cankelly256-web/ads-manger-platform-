@@ -1,6 +1,6 @@
 # Ads Manager Platform
 
-A comprehensive agency tool for managing multiple clients' advertising campaigns across Meta (Facebook/Instagram) and Google Ads with web and mobile dashboards.
+A comprehensive agency tool for managing multiple adds' advertising campaigns across Meta (Facebook/Instagram) and Google Ads with web and mobile dashboards.
 
 ## 🎯 Project Overview
 
