@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: ads_manager
+      POSTGRES_PASSWORD: ads_manager_password
+      POSTGRES_DB: ads_manager
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ads_manager"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://ads_manager:ads_manager_password@db:5432/ads_manager
+      SECRET_KEY: your-secret-key-change-in-production
+      DEBUG: "True"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - .:/app
+
+volumes:
+  postgres_data:

@@ -1,0 +1,46 @@
+# Backend
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+backend/.pytest_cache/
+backend/htmlcov/
+backend/.coverage
+backend/dist/
+backend/build/
+backend/*.egg-info
+
+# Web
+web/node_modules/
+web/.env.local
+web/.env.*.local
+web/build/
+web/dist/
+web/.DS_Store
+web/*.log
+
+# Mobile
+mobile/node_modules/
+mobile/.env
+mobile/.expo/
+mobile/dist/
+mobile/build/
+mobile/.DS_Store
+mobile/*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Environment
+.env
+.env.local
+.env.*.local
